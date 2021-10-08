@@ -8,6 +8,7 @@ const [text, handleChange] = useState("");
  
  const resetTxt = () => {
   handleChange("");
+  localStorage.removeItem('txt');
 };
 
  const saveTxt = () => {
