@@ -12,6 +12,7 @@ const [text, handleChange] = useState("");
 };
 
  const saveTxt = () => {
+   handleChange(text)
   localStorage.setItem('txt', text);
  }
  
@@ -20,7 +21,7 @@ const [text, handleChange] = useState("");
       <div className="box">
         <div className="field">
           <div className="control">
-            <textarea   onChange={(e) => handleChange(e.target.value)} className="textarea is-large" placeholder="Notes..." />
+            <textarea value={text}  onChange={(e) => handleChange(e.target.value)} className="textarea is-large" placeholder="Notes..." />
           </div>
         </div>
         <button type="submit" onClick={saveTxt} className="button is-large is-primary is-active">Save</button>
